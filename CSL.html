@@ -1,63 +1,101 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
- <head><meta http-equiv="Content-Type" content="text/html; charset=utf8"><title>CREEK Source License</title></head>
- <body bgcolor="#FFFFFF">
-  <div style="margin: 3em 10%; font-family:serif;text-align:justify; border: 1px solid black; padding: 2em;   box-shadow: 4px 8px #888888;">
-
-  <p style="text-align:center"><strong>CREEK Source License</strong></p>
-  
-  <p style="text-align:center">VERSION 1.0, FEBRUARY 15 2019</p>
-
-  <p><strong><a name="Parameters">0. Parameters</a></strong>.</p>
-
-  <div style="margin-left: 1em;">
-
-   <p><strong>Licensor : ruo.creek@outlook.com</strong></p>
+<html lang="en"><head>
+   <meta charset="UTF-8">
+   <title>loading</title>
    
-   <p><strong>Licensed Work : CREEK Base</strong></p>
-
-   <p>Ownership of intellectual property rights in The Licensed Work
-      shall at all times remain with The Licensor.</p>
-
-  </div>
-  
-  <p><strong><a name="Terms">1. Terms</a></strong>.</p>
-
-  <div style="margin-left: 1em;">
-
-   <p>The Licensor hereby grants you the right to copy, modify,
-      create derivative works, and to distribute The Licensed Work in compiled form only.</p>
+   <style>
+   * {
+     margin: 0;
+     padding: 0;
+   }
+   body {
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-image: linear-gradient(180deg, #000000, #001635); 
+   }
+   .loader {
+       width: 20em;
+       height: 20em;
+       font-size: 10px;
+       position: relative;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
    
-   <p>If your use of the Licensed Work does not comply with the requirements
-      currently in effect as described in this License, you must purchase a
-      commercial license from the Licensor, its affiliated entities, or authorized
-      resellers, or you must refrain from using the Licensed Work.</p>
-
-   <p>All copies of the original and modified Licensed Work, and derivative works
-      of the Licensed Work, are subject to this License. This License applies
-      separately for each version of the Licensed Work and the Change Date may vary
-      for each version of the Licensed Work released by Licensor.</p>
-      
-   <p>You must conspicuously display this License on each original or modified copy
-      of the Licensed Work. If you receive the Licensed Work in original or
-      modified form from a third party, the terms and conditions set forth in this
-      License apply to your use of that work.</p>
-
-   <p>Any use of the Licensed Work in violation of this License will automatically
-      terminate your rights under this License for the current and all other
-      versions of the Licensed Work.</p>
-      
-   <p><strong>THE LICENSED WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-              OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-              FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-              LICENSOR BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING, BUT NOT LIMITED TO ANY
-              DIRECT, OR INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING FROM YOUR USE
-              OR INABILITY TO USE THE LICENSED WORK IN IT, NO MATTER HOW IT’S CAUSED OR
-              BASED ON WHICH LEGAL THEORY, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
-              DAMAGES</strong>.</p>
-
-  </div>
-  
-  <p><strong>End of the Terms and Conditions</strong></p>
-  
- </body>
-</html>
+   .loader .face {
+       position: absolute;
+       border-radius: 50%;
+       border-style: solid;
+       animation: animate 3s linear infinite;
+   }
+   
+   .loader .face:nth-child(1) {
+       width: 100%;
+       height: 100%;
+       color: #417dff;
+       border-color: currentColor transparent transparent currentColor;
+       border-width: 0.2em 0.2em 0em 0em;
+       --deg: -45deg;
+       animation-direction: normal;
+   }
+   
+   .loader .face:nth-child(2) {
+       width: 70%;
+       height: 70%;
+       color: #006cff;
+       border-color: currentColor currentColor transparent transparent;
+       border-width: 0.2em 0em 0em 0.2em;
+       --deg: -135deg;
+       animation-direction: reverse;
+   }
+   
+   .loader .face .circle {
+       position: absolute;
+       width: 50%;
+       height: 0.1em;
+       top: 50%;
+       left: 50%;
+       background-color: transparent;
+       transform: rotate(var(--deg));
+       transform-origin: left;
+   }
+   
+   .loader .face .circle::before {
+       position: absolute;
+       top: -0.5em;
+       right: -0.5em;
+       content: '';
+       width: 1em;
+       height: 1em;
+       background-color: currentColor;
+       border-radius: 50%;
+       box-shadow: 0 0 2em,
+                   0 0 4em,
+                   0 0 6em,
+                   0 0 8em,
+                   0 0 10em,
+                   0 0 0 0.5em rgba(0, 255, 255, 0.1);
+   }
+   
+   @keyframes animate {
+       to {
+           transform: rotate(1turn);
+       }
+   }
+   
+   </style>
+   
+   </head>
+   <body>
+   
+   <div class="loader">
+      <div class="face">
+         <div class="circle"></div>
+      </div>
+      <div class="face">
+         <div class="circle"></div>
+      </div>
+   </div>
+   </body></html>
